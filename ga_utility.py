@@ -19,7 +19,7 @@ from statistics import mean
 def read_HSI():
     X = scipy.io.loadmat('Indian_pines_corrected.mat')['indian_pines_corrected']
     y = scipy.io.loadmat('Indian_pines_gt.mat')['indian_pines_gt']
-    print(f"X shape: {X.shape}\ny shape: {y.shape}")
+    #print(f"X shape: {X.shape}\ny shape: {y.shape}")
     return X, y
 
 # flatten the 3-d data
@@ -45,31 +45,31 @@ def initiate_population(x, n, ind):
 def crossover(m1, m2, population):
     mate1 = []
     mate2 = []
-    print("m1", m1)
-    print("m2", m2)
+    #print("m1", m1)
+    #print("m2", m2)
     k = np.random.randint(1,4)
     print("Crossover point : ", k)
-    print("Population inside crossover", population)
+    #print("Population inside crossover", population)
     for val in m1:
         mate1.append(val)
     for vals in m2:
         mate2.append(vals)
-    print("mate1", mate1)
-    print("mate2", mate2)
+    #print("mate1", mate1)
+    #print("mate2", mate2)
     for i in range(k, len(mate1)):
         mate1[i], mate2[i] = m2[i], m1[i]
-    print("Crossover function returns",mate1)
-    print("Population inside crossover before return statement ", population)
+    #print("Crossover function returns",mate1)
+    #print("Population inside crossover before return statement ", population)
     return mate1, mate2
 
 def mutate(ofsp):
     m_ofsp = []
     m_ofsp.append(ofsp)
-    print("offspring before mutation", m_ofsp)
+    #print("offspring before mutation", m_ofsp)
     k = np.random.randint(len(ofsp))
-    print("size of m_ofsp", m_ofsp[0])
+    #print("size of m_ofsp", m_ofsp[0])
     m_ofsp[0][k] = np.random.randint(200)
-    print("Offspring after mutation", m_ofsp)
+    #print("Offspring after mutation", m_ofsp)
     return m_ofsp[0]
 
 # fitness function calculates the fitness of each individual and returns the average score

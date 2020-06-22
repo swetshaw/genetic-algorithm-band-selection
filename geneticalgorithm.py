@@ -23,7 +23,7 @@ X, Y = flatten_data(x,y)
 # the population is initialized
 population = initiate_population(X, n, ind)
 print("population initialized")
-print("Population after initialization : ", population)
+#print("Population after initialization : ", population)
 generation = 0
 while(generation != 3):
     count = 0
@@ -36,9 +36,9 @@ while(generation != 3):
         p1 = population[count]
         p2 = population[count+1]
         
-        print("population before crossover", population)
+        #print("population before crossover", population)
         offspring1, offspring2 = crossover(p1, p2, population) #perform a cross-over of p1 and p2
-        print("Population after crossover {} : {}".format(count, population))
+        #print("Population after crossover {} : {}".format(count, population))
         print("offspring 1 : ", offspring1)
         #print("offspring 2 : ", offspring2)
         m_offspring1 = mutate(list(offspring1))
@@ -52,10 +52,10 @@ while(generation != 3):
     print("creating pool of poulation + offsprings")
     npool = []   
     for items in population:
-        print("item in population {}".format(items))
+        #print("item in population {}".format(items))
         npool.append(items)
     for item in offspring_list:
-        print("item in offspring {}".format(item))
+        #print("item in offspring {}".format(item))
         npool.append(item) 
     print("npool : ", npool)
     #npool = population + offspring_list  #merge the initial population with the offsprings
@@ -65,11 +65,11 @@ while(generation != 3):
     for i, item in enumerate(fitness_list):
         scores.append((fitness_list[i], i))
     sorted_score = sorted(scores, reverse=True)   #add descending order
-    print("sorted score", sorted_score)
+    #print("sorted score", sorted_score)
     sorted_index = []
     for i in range(len(sorted_score)):
         sorted_index.append(sorted_score[i][1])
-    print("Indices of the selected individuals : ", sorted_index)
+    #print("Indices of the selected individuals : ", sorted_index)
     next_gen = []
     for index in sorted_index:
         next_gen.append(npool[index])
