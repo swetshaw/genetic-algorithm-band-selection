@@ -14,4 +14,10 @@ Here we have used Indian_pines dataset from - http://www.ehu.eus/ccwintco/index.
 - The population consists of 8 individuals
 - Each individual has 10 genes.
 
-  
+For running the program run - 
+
+```sh
+$ python geneticalgorithm.py
+```
+
+ If you want to use your own dataset change it in the ga_utility.py file.
