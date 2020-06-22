@@ -20,4 +20,4 @@ For running the program run -
 $ python geneticalgorithm.py
 ```
 
- If you want to use your own dataset change it in the ga_utility.py file.
+ *If you want to use your own dataset change it in the ga_utility.py file.*
